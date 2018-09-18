@@ -18,9 +18,13 @@ This is a python flask web app with which you can keep track item price in diffe
 **requirements :**
 
 *1 : python 3.x
+
 2 : flask
-3 : pymongo*
-*4: MonoDB*
+
+3 : pymongo
+
+4: MonoDB*
+
 for database install [**MongoDB**](MongoDB)
 
 ================================
