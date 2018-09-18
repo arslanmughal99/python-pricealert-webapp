@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Price Alert</title>
+    <link type="text/css" rel="stylesheet" href="{{ url_for('static', filename="css/style.css") }}">
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.2/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-Smlep5jCw/wG7hdkwQ/Z5nLIefveQRIY9nfy6xoR1uRYBtpZgI6339F5dgvm/e9B" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css"
+          integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ" crossorigin="anonymous">
+
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.2/js/bootstrap.min.js"
+            integrity="sha384-o+RDsa0aLu++PJvFqy8fFScvbHFLtbvScb8AjopnFD+iEQ7wo/CG0xlczd+2O/em"
+            crossorigin="anonymous"></script>
+
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.2/js/bootstrap.bundle.min.js"
+            integrity="sha384-CS0nxkpPy+xUkNGhObAISrkg/xjb3USVCwy+0/NMzd5VxgY4CMCyTkItmy5n0voC"
+            crossorigin="anonymous"></script>
+</head>
+
+<body>
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+
+    <div class="container">
+        <a class="navbar-brand" href="/">Price Alert</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav">
+                <li class="nav-item active">
+                    <a class="nav-link" href="/">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{{ url_for('store.index') }}">Stores</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{{ url_for('alert.index') }}">Alerts</a>
+                </li>
+            </ul>
+            <div class="container col-9">
+                <ul class="nav justify-content-end">
+                    {% if  session['email'] %}
+                        <li class="nav-item active">
+                            <a class="nav-link text-light" href="{{ url_for('user.user_alerts') }}"><i class="fas fa-exclamation-triangle"></i> Your Alerts</a>
+                        </li>
+                        <li class="nav-item active">
+                            <a class="nav-link text-light" href="{{ url_for('user.logout_user') }}"><i class="fas fa-sign-out-alt"></i> Logout </a>
+                        </li>
+
+                    {% else %}
+
+                        <li class="nav-item active">
+                            <a class="nav-link text-light" href="{{ url_for('user.register_user') }}"><i class="fas fa-user-plus"></i> SignUp</a>
+                        </li>
+                        <li class="nav-item active">
+                            <a class="nav-link text-light" href="{{ url_for('user.login_user') }}"><i class="fas fa-sign-in-alt"></i> Login </a>
+                        </li>
+                    {% endif %}
+
+                </ul>
+            </div>
+        </div>
+
+    </div>
+</nav>
+
+{% block content %}
+
+{% endblock %}
+
+</body>
+</html>

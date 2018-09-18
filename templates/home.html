@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Home</title>
+    <!--        Google fonts Import-->
+    <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700,900" rel="stylesheet">
+
+    <!--        Animate.css CDN here -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
+
+    <!--        Linking my Own CSS for Alteration -->
+
+    <link rel="stylesheet" type="text/css" href="https://dl.dropbox.com/s/xr6x1bsmmrifkog/home.css">
+
+
+    <!--        JQuerry and javaScript libs CDN's-->
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+            integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+            crossorigin="anonymous"></script>
+    <!--        --------------------------------------------------------->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"
+            integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+            crossorigin="anonymous"></script>
+
+    <!--        Font Awasome CDN-->
+
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css"
+          integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ" crossorigin="anonymous">
+
+
+    <!--        Bootstrap CDN's Here -->
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+          integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <!--        ------------------------------------------>
+
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"
+            integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
+            crossorigin="anonymous"></script>
+
+
+</head>
+
+
+<body>
+
+<!--        Navigation Bar Here -->
+<!--        Navigation Bar Here -->
+<!--        Navigation Bar Here -->
+<!--        Navigation Bar Here -->
+
+<header class=" nav-clr">
+    <div class="container">
+        <nav class="navbar navbar-expand-lg  pt-3 pb-3">
+            <a class="navbar-brand text-white" href="{{ url_for('home') }}">PriceGala</a>
+            <button class="navbar-toggler bg-light" type="button" data-toggle="collapse" data-target="#navbarNav"
+                    aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon "><i class="fas fa-align-justify toggle-ico"></i></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item active">
+                        <a class="nav-link text-white res-link" href="{{ url_for("home") }}">Home <span class="sr-only">(current)</span></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-white res-link" href="{{ url_for("store.index") }}">Stores</a>
+                    </li>
+                </ul>
+
+
+                {% if session['email'] %}
+                    <ul class=" col-10 nav justify-content-end">
+                        <li class="nav-item res-link">
+                            <a class="nav-link text-white res-link" href="{{ url_for('user.user_alerts') }}"><i
+                                    class="fas fa-exclamation-triangle"></i> Your Alerts</a>
+                        </li>
+                        <li class="nav-item res-link">
+                            <a class="nav-link text-white " href="{{ url_for('user.logout_user') }}"><i
+                                    class="fas fa-sign-out-alt"></i> Logout</a>
+                        </li>
+                    </ul>
+
+
+
+                {% else %}
+                    <ul class=" col-10 nav justify-content-end">
+                        <li class="nav-item res-link">
+                            <a class="nav-link text-white res-link" href="{{ url_for('user.register_user') }}"><i
+                                    class="fas fa-user-plus"></i> SignUp</a>
+                        </li>
+                        <li class="nav-item res-link">
+                            <a class="nav-link text-white " href="{{ url_for('user.login_user') }}"><i
+                                    class="fas fa-sign-out-alt"></i> Login</a>
+                        </li>
+                    </ul>
+
+
+
+
+                {% endif %}
+            </div>
+        </nav>
+    </div>
+</header>
+
+<!--        CENTER BODY SATART HERE -->
+<!--        CENTER BODY SATART HERE -->
+<!--        CENTER BODY SATART HERE -->
+<!--        CENTER BODY SATART HERE -->
+<!--        CENTER BODY SATART HERE -->
+
+<div class="container pt-5 animated fadeIn delay-2s">
+    <div class="col-11 nav-clr pb-2">
+        <h1 class="text-white title-size">PriceGala</h1>
+        <p class="text-white line-pad">Free to use Online app which manage your all stores and keep you relaxed :)</p>
+        <hr class="my-4 bg-light line-pad">
+        <small><p class="text-white text-justify">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam et
+            diam dapibus, tempus est quis, sollicitudin turpis. Praesent dignissim justo eu est rhoncus mollis.
+            Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Class aptent taciti
+            sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Nulla eu velit vitae massa finibus
+            ultrices. Nam vel fringilla sem, vitae auctor odio. Maecenas ante ex, ultrices sit amet felis at, volutpat
+            rhoncus nunc.
+
+            Mauris viverra erat a lacus varius, laoreet vulputate urna sagittis. Nullam suscipit sodales posuere.
+            Phasellus ac lacus eu metus bibendum posuere fringilla eu massa. In quis gravida tellus. Class aptent taciti
+            sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Interdum et malesuada fames ac ante
+            ipsum primis in faucibus. Fusce rutrum pulvinar magna vel viverra. Pellentesque sagittis nisi ac viverra
+            tempor. Vestibulum vel nisl ligula. Lorem ipsum dolor sit amet, consectetur adipiscing elit. In id lacus
+            metus. Nulla sagittis tincidunt purus quis iaculis. Ut enim nisl, euismod in bibendum eget, dapibus id
+            dui.</p></small>
+
+        {% if session['email'] %}
+            <p class="text-white">Go a head and enjoy!</p>
+
+        {% else %}
+
+            <p class="text-white">want to be a member of this exciting project ? <strong><a class="text-white"
+                                                                                            href="{{ url_for('user.register_user') }}">
+                SignUp Today :)</a></strong></p>
+        {% endif %}
+
+    </div>
+</div>
+
+
+<div class="container  animated fadeIn delay-2s">
+    <div class="col-11 nav-clr pb-2">
+        <h1 class="text-white ">Save Your Time :)</h1>
+        <p class="text-white line-pad">Free to use Online app which manage your all stores and keep you relaxed :)</p>
+        <hr class="my-4 bg-light line-pad">
+        <small><p class="text-white text-justify">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam et
+            diam dapibus, tempus est quis, sollicitudin turpis. Praesent dignissim justo eu est rhoncus mollis.
+            Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Class aptent taciti
+            sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Nulla eu velit vitae massa finibus
+            ultrices. Nam vel fringilla sem, vitae auctor odio. Maecenas ante ex, ultrices sit amet felis at, volutpat
+            rhoncus nunc.
+
+            Mauris viverra erat a lacus varius, laoreet vulputate urna sagittis. Nullam suscipit sodales posuere.
+            Phasellus ac lacus eu metus bibendum posuere fringilla eu massa. In quis gravida tellus. Class aptent taciti
+            sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Interdum et malesuada fames ac ante
+            ipsum primis in faucibus. Fusce rutrum pulvinar magna vel viverra. Pellentesque sagittis nisi ac viverra
+            tempor. Vestibulum vel nisl ligula. Lorem ipsum dolor sit amet, consectetur adipiscing elit. In id lacus
+            metus. Nulla sagittis tincidunt purus quis iaculis. Ut enim nisl, euismod in bibendum eget, dapibus id
+            dui.</p></small>
+
+    </div>
+</div>
+
+<!--        FOOTER START HERE -->
+<!--        FOOTER START HERE -->
+<!--        FOOTER START HERE -->
+<!--        FOOTER START HERE -->
+<!--        FOOTER START HERE -->
+
+<footer class="nav-clr">
+    <div class="container-fluid col-12 pb-1">
+        <div class="copy-right">
+            <strong>
+                <small><p class="text-center pt-4 text-white">PriceGala copyright &copy; 2018</p></small>
+            </strong>
+        </div>
+        <div>
+            <small><p class="text-center footer-p2 pl-5 pr-5 pt-3 text-white">Lorem ipsum dolor sit amet, consectetur
+                adipiscing elit. Vivamus cursus lectus magna, eget blandit magna iaculis a. Donec efficitur nisl sit
+                amet bibendum ullamcorper. Curabitur pellentesque ullamcorper est eget egestas.</p></small>
+        </div>
+    </div>
+
+
+</body>
+</html>
